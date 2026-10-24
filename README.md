@@ -21,11 +21,13 @@ Subbasin, AGRL, FRST, PAST, WATR, URBN (land-use change rate, %),
 SURQ, WYLD, GWQ, LATQ, PERC, ET (component change, mm/yr; 2018 minus 1980).
 
 ## Run
-`
-pip install numpy pandas scikit-learn
-python plsr_main.py example_input.csv
-`
-Outputs model_summary.csv (Table 4) and coefficients.csv (Tables 5-6).
+
+Install the dependencies and run the script:
+
+    pip install numpy pandas scikit-learn
+    python plsr_main.py example_input.csv
+
+This writes `model_summary.csv` (Table 4) and `coefficients.csv` (Tables 5-6).
 
 ## Reference results (example_input.csv)
 | model | responses | N | nc | R2 | Q2 |
@@ -36,3 +38,4 @@ Outputs model_summary.csv (Table 4) and coefficients.csv (Tables 5-6).
 | PLSR4 | LATQ | 59 | 3 | 0.657 | 0.594 |
 
 Python 3.12, scikit-learn 1.8.
+Values may differ in the last digit between runs because the seven-fold split is random (seed 42); the Q2 of the PLSR4 model is 0.593 in the manuscript and 0.594 here.
